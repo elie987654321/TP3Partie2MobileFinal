@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
         {
             Intent intentActivityEvenements = new Intent(getBaseContext() , EvenementsActivity.class);
             startActivity(intentActivityEvenements);
-            /*
+
             AsyncHttpClient client = new AsyncHttpClient();
 
             client.get("https://services3.arcgis.com/F77upWE9kmPKRMqm/ArcGIS/rest/services/Evenements/FeatureServer/0/query?where=equipe+%3D+'martin'&objectIds=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&outDistance=&relationParam=&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&defaultSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&collation=&orderByFields=&groupByFieldsForStatistics=&returnAggIds=false&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnTrueCurves=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token=",
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
 
                         }
                     }
-            );*/
+            );
         });
     }
 }
