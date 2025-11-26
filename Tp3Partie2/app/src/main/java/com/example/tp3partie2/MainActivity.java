@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity
 {
     Button buttonListEvents;
 
+    Button buttonAddEvent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,14 @@ public class MainActivity extends AppCompatActivity
             return insets;
         });
 
+        buttonAddEvent = findViewById(R.id.mainButtonAddEvent);
         buttonListEvents = findViewById(R.id.mainButtonListEvents);
+
+        buttonAddEvent.setOnClickListener((view) ->
+        {
+            Intent intent = new Intent(this, AddEvenementActivite.class);
+            startActivity(intent);
+        });
 
         buttonListEvents.setOnClickListener((view) ->
         {
