@@ -144,6 +144,7 @@ public class AddEvenementActivite extends AppCompatActivity
                         runOnUiThread(() ->
                                     {
                                         ShowMessage("L'evenement a bien été ajouté");
+                                        ResetForm();
                                     }
                                 );
                     }
@@ -156,6 +157,12 @@ public class AddEvenementActivite extends AppCompatActivity
                         });
                     }
                 });
+    }
+
+    private void ResetForm()
+    {
+        inputTitre.setText("");
+        inputDescription.setText("");
     }
 
     private void ShowMessage(String message)
