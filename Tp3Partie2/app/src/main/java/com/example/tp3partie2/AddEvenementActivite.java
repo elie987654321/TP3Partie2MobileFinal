@@ -1,5 +1,7 @@
 package com.example.tp3partie2;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -7,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -138,13 +141,25 @@ public class AddEvenementActivite extends AppCompatActivity
                 , new TextHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Headers headers, String response) {
-                        int t = 0;
+                        runOnUiThread(() ->
+                                    {
+                                        ShowMessage("L'evenement a bien été ajouté");
+                                    }
+                                );
                     }
 
                     @Override
                     public void onFailure(int statusCode, @Nullable Headers headers, String errorResponse, @Nullable Throwable throwable) {
-                        int t = 0;
+                        runOnUiThread(() ->
+                        {
+                            ShowMessage("Erreur, l'evenement n'a pas pu être ajouté");
+                        });
                     }
                 });
+    }
+
+    private void ShowMessage(String message)
+    {
+        Toast.makeText(this, message, LENGTH_SHORT).show();
     }
 }
