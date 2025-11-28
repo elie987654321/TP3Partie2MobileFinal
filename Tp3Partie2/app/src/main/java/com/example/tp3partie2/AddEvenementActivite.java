@@ -79,7 +79,7 @@ public class AddEvenementActivite extends AppCompatActivity
                             Manifest.permission.ACCESS_FINE_LOCATION},
                     FINE_LOCATION_PERMISSION_CODE);
 
-            if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+            if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
             {
                 GetLocation();
             }
@@ -142,11 +142,11 @@ public class AddEvenementActivite extends AppCompatActivity
                     @Override
                     public void onSuccess(int statusCode, Headers headers, String response) {
                         runOnUiThread(() ->
-                                    {
-                                        ShowMessage("L'evenement a bien été ajouté");
-                                        ResetForm();
-                                    }
-                                );
+                            {
+                                ShowMessage("L'evenement a bien été ajouté");
+                                ResetForm();
+                            }
+                        );
                     }
 
                     @Override
